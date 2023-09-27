@@ -32,6 +32,8 @@ describe Game do
   describe '#can_be_archived?' do
     it 'Returns true if the it is more than 10 years passed of its publishing, otherwise false' do
       expect(@game.can_be_archived?).to be_truthy
+      game2 = Game.new('2020/08/11', true, '2020/09/26')
+      expect(game2.can_be_archived?).to be_falsy
     end
   end
 end
